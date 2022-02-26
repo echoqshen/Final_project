@@ -1,3 +1,7 @@
+#files to ignore
+README.md 
+AD_ReadME.docx 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
