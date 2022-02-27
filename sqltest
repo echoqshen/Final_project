@@ -1,0 +1,18 @@
+-- Creating table for the sample data csv
+CREATE TABLE sampledata (
+	index int,
+	EVENT_ID int,
+	STATE varchar,
+	YEAR int,
+	MONTH_NAME varchar,
+	EVENT_TYPE varchar,
+	EVENT_NARRATIVE varchar
+);
+
+--Drop
+DROP TABLE sampledata;
+
+--Pulling info
+SELECT * FROM sampledata;
+SELECT * FROM sampledata WHERE state = 'NEW JERSEY';
+SELECT * FROM sampledata WHERE state = 'FLORIDA';
