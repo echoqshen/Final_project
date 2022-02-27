@@ -5,7 +5,7 @@
 ####
 Our team decided to focus on Climate Change, specifically the impact rising sea levels will have on coastal US States. 
 
-## Reason why this topic was selected? 
+## Why was this topic selected? 
 ####
 The team decided to focus on this topic due to the direct impact this type of event would have on NJ since we are all current residents and want to put our Data Science skills to the test in order to see how soon such an event could occur.
 
