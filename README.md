@@ -15,7 +15,16 @@ We collected data sets from the National Centers for Environmental Information G
 
 ## Technologies In Use
 ####
-In this project we will be using the following: PostgreSQL, Pandas, VSCode, Jupyter Notebook, PGAdmin, MongoDB, Python, and machine learning. Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
+In this project we will be using the following: 
+* PostgreSQL, 
+* Pandas, 
+* VSCode, 
+* Jupyter Notebook, 
+* PGAdmin, 
+* MongoDB, 
+* Python, and 
+* machine learning. 
+* Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
 
 ## Machine Learning
 ####
