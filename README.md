@@ -31,7 +31,7 @@ The main question we would like to answer is which coastal state may be the most
 
 We plan to create an interactive map API to display how an area will be affected by the increase in sea level.
 
-Another question we hope to explore is if sea level change has any correlation to global economic activity. Does a higher increase in sea level affect economic activty across the world in any way? Our intitial hypothesis is that there is NO correlation between them.
+Another question we hope to explore is if sea level change has any correlation to global economic activity. Does human economic activity increase the sea level across the world in any way? Our intitial hypothesis is that there is NO correlation between them.
 
 ## Machine Learning Model
 ####
