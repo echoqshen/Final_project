@@ -16,3 +16,5 @@ DROP TABLE sampledata;
 SELECT * FROM sampledata;
 SELECT * FROM sampledata WHERE state = 'NEW JERSEY';
 SELECT * FROM sampledata WHERE state = 'FLORIDA';
+SELECT * FROM sampledata WHERE state = 'FLORIDA' AND year = 2021;
+SELECT * FROM sampledata WHERE year = 2016;
