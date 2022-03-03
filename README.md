@@ -5,9 +5,13 @@
 ####
 Our team decided to analyze US unemployment data and focus on the data from the years 2000 - 2021. 
 
-## Reason why this topic was selected? 
+## Why was this topic selected? 
 ####
+
 The team decided to focus on this topic due to the direct impact this type of event would have on NJ since we are all current residents and want to put our Data Science skills to the test in order to see how different factors .
+=======
+The team decided to focus on this topic due to the direct impact this type of event would have on NJ and FL since we are all current residents and want to put our Data Science skills to the test in order to see how soon such an event could occur.
+
 
 ## Our Roadmap
 ####
@@ -15,7 +19,26 @@ We collected data sets from the Bureau of Labor Statistics website (BLS) [https:
 
 ## Technologies In Use
 ####
-In this project we will be using the following: PostgreSQL, Pandas, VSCode, Jupyter Notebook, PGAdmin, MongoDB, Python, and machine learning. Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
+In this project we will be using the following: 
+* PostgreSQL, 
+* Pandas, 
+* VSCode, 
+* Jupyter Notebook, 
+* PGAdmin, 
+* MongoDB, 
+* Python, and 
+* machine learning. 
+* Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
+
+
+=======
+## Our Roadmap
+The main question we would like to answer is which coastal state may be the most in danger of being submerged the soonest based on the data collected regarding rising sea levels. Since our data spans almost a decade, we intend to make a prediction into the next decade.
+
+We plan to create an interactive map API to display how an area will be affected by the increase in sea level.
+
+Another question we hope to explore is if sea level change has any correlation to global economic activity. Does human economic activity increase the sea level across the world in any way? Our intitial hypothesis is that there is NO correlation between them.
+
 
 ## Machine Learning Model
 ####
