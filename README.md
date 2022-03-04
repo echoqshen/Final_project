@@ -9,9 +9,6 @@ Our team decided to analyze US unemployment data and focus on the data from the 
 ####
 
 The team decided to focus on this topic due to the direct impact this type of event would have on NJ since we are all current residents and want to put our Data Science skills to the test in order to see how different factors .
-=======
-The team decided to focus on this topic due to the direct impact this type of event would have on NJ and FL since we are all current residents and want to put our Data Science skills to the test in order to see how soon such an event could occur.
-
 
 ## Our Roadmap
 ####
@@ -31,7 +28,6 @@ In this project we will be using the following:
 * Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
 
 
-=======
 ## Our Roadmap
 The main question we would like to answer is which coastal state may be the most in danger of being submerged the soonest based on the data collected regarding rising sea levels. Since our data spans almost a decade, we intend to make a prediction into the next decade.
 
