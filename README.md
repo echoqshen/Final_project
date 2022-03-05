@@ -38,6 +38,6 @@ Another question we hope to explore is if sea level change has any correlation t
 
 ## Machine Learning Model
 ####
-Because our prediction is a type of forecasting, the machine learning model that would best fit our needs might be a neural network model. This fits our project because we plan to use data from the previous two decades (2010-2021) and predict what the unemployment rate might be at year's end in December 2022.
+Because our prediction is a type of forecasting, the machine learning model that would best fit our needs might be a neural network model. This fits our project because we plan to use data from the previous two decades (2000-2021) and predict what the unemployment rate might be at year's end in December 2022.
 
 
