@@ -95,8 +95,8 @@ error = sqrt(mean_squared_error(y_test,pred_y)) #calculate rmse
 #rmse_val.append(error) #store rmse values
 
 ## store the inputs and results 
-# df = pd.DataFrame(pred_y)
-# df.to_csv('results.csv')
+df = pd.DataFrame(pred_y)
+df.to_csv('results.csv')
 
-# df = pd.DataFrame(x_test)
-# df.to_csv('test_set.csv')
+df = pd.DataFrame(x_test)
+df.to_csv('test_set.csv')
