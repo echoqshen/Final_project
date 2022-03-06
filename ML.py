@@ -32,7 +32,7 @@ for dataframe in dataframes:
 
 combined = reduce(lambda x, y: pd.merge(x, y, on='date'), dataframes)
 combined.columns = fred_indexes
-# combined.to_csv("Resources/combine.csv")
+combined.to_csv("Resources/combine.csv")
 
 ### KNN REGRESSION 
 df = combined
@@ -95,8 +95,8 @@ error = sqrt(mean_squared_error(y_test,pred_y)) #calculate rmse
 #rmse_val.append(error) #store rmse values
 
 ## store the inputs and results 
-# df = pd.DataFrame(pred_y)
-# df.to_csv('results.csv')
+df = pd.DataFrame(pred_y)
+df.to_csv('Resources/results.csv')
 
-# df = pd.DataFrame(x_test)
-# df.to_csv('test_set.csv')
+df = pd.DataFrame(x_test)
+df.to_csv('Resources/test_set.csv')
