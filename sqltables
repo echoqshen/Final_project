@@ -30,4 +30,11 @@ DROP TABLE race;
 DROP TABLE gender;
 DROP TABLE overall_monthly;
 
+<<<<<<< HEAD
 SELECT * FROM education;
+=======
+SELECT * FROM education;
+SELECT * FROM gender;
+SELECT * FROM race;
+SELECT * FROM overall_monthly;
+>>>>>>> 6ae85552143ed339cba8bad84c687cfcac5d542a
