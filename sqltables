@@ -30,7 +30,22 @@ DROP TABLE race;
 DROP TABLE gender;
 DROP TABLE overall_monthly;
 
+
 SELECT * FROM education;
 SELECT * FROM gender;
 SELECT * FROM race;
 SELECT * FROM overall_monthly;
+
+SELECT gender.Rate_Men, gender.Rate_Women,
+education.Rate_High_School,
+education.Rate_Bachelors,
+education.Rate_Masters,
+education.Rate_Doctoral,
+race.Rate_Asian,
+race.Rate_Black,
+Race.Rate_White,
+race.Rate_Latino
+FROM gender
+INNER JOIN education ON gender.DATE=education.DATE
+INNER JOIN race
+ON gender.DATE=race.DATE;
