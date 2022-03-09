@@ -29,9 +29,13 @@ In this project we will be using the following:
 * PGAdmin, 
 * MongoDB, 
 * Python, and 
-* machine learning. 
-* Along with the physical code for the project, we have opted to use a branch protection rule within Github to make secure and accurate pull requests. This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates. 
+* machine learning.
 
+
+##Description of the Communication Protocols
+####
+The team communicates primarily via a Slack Channel. Each member was assigned a role and works on their piece of the project on their individual git branch. When they are ready to push files/updates to the main branch we have opted to use a branch protection rule within Github to make secure and accurate pull requests. 
+This rule requires two individuals within the group to approve any pull requests that are submitted before the branches can be merged with the added updates.   
 
 ## Machine Learning Model
 ####
