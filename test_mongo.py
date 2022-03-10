@@ -62,7 +62,7 @@ collection2 = db.project2
 ### clear the collection 
 collection2.remove({})
 
-fred_more = ["EMRATIO","UNEMPLOY"]
+fred_more = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL','JTU5100JOL','JTU5200JOL']
 dataframes = []
 for ind in fred_more:
     df1 = pd.DataFrame(fred.get_series(ind, observation_start='1990-1-1'))
