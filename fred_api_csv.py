@@ -36,11 +36,19 @@ for dataframe in dataframes:
 
 combined = reduce(lambda x, y: pd.merge(x, y, on='date'), dataframes)
 combined.columns = fred_indexes
-combined.to_csv("Resources/combine.csv")
+# combined.to_csv("Resources/combine.csv")
 
 # Employment-Population Ratio (EMRATIO)
 # Unemployment Level (UNEMPLOY)
-fred_more = ["EMRATIO","UNEMPLOY"]
+# Job Openings: Total Nonfarm (JTSJOL)
+# Job Openings: Manufacturing (JTS3000JOL)
+# Job Openings: Education and Health Services (JTS6000JOL)
+# Job Openings: Government (JTS9000JOL)
+# Consumer Price Index for All Urban Consumers: Meats, Poultry, Fish, and Eggs in U.S. City Average (CUSR0000SAF112)
+# Job Openings: Information (JTU5100JOL)
+# Job Openings: Finance and Insurance (JTU5200JOL)
+
+fred_more = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL','JTU5100JOL','JTU5200JOL']
 dataframes = []
 for ind in fred_more:
     df = pd.DataFrame(fred.get_series(ind, observation_start='2000-1-1'))
