@@ -1,23 +1,25 @@
 import pandas as pd
 from fredapi import Fred
-from config import fred_key
+from config import fred_key, mongo_user, mongo_password
 from functools import reduce
 fred = Fred(api_key=fred_key)
+from pymongo import MongoClient
+
 
 # Federal Funds Effective Rate: FEDFUNDS
 # Consumer Price Index for All Urban Consumers: All Items in U.S. City Average: CPIAUCSL
 # Unemployment Rate: UNRATE
-# Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity: GS10
-# # M2: M2SL
-# M1: M1SL
-# S&P/Case-Shiller U.S. National Home Price Index: CSUSHPINSA
+# Interest Rates, Discount Rate for United States: INTDSRUSM193N
+# 10-Year Breakeven Inflation Rate: T10YIEM
+# 3-Month Treasury Bill Secondary Market Rate: TB3MS
+# Consumer Price Index: Total All Items for the United States: CPALTT01USM657N
 # Labor Force Participation Rate: CIVPART
 # Personal Saving Rate: PSAVERT
-# Average Hourly Earnings of All Employees, Total Private: CES0500000003
-# Total Vehicle Sales: TOTALSA
+# Bank Prime Loan Rate: MPRIME
+# Unemployment Rate - Black or African American: LNS14000006
 
-fred_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","GS10","M2SL","M1SL", "CSUSHPINSA",
-"CIVPART","PSAVERT","CES0500000003", "TOTALSA"]
+fred_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
+"CIVPART","PSAVERT","MPRIME", "LNS14000006"]
 
 dataframes = []
 for ind in fred_indexes:
@@ -35,3 +37,24 @@ for dataframe in dataframes:
 combined = reduce(lambda x, y: pd.merge(x, y, on='date'), dataframes)
 combined.columns = fred_indexes
 combined.to_csv("Resources/combine.csv")
+
+# Employment-Population Ratio (EMRATIO)
+# Unemployment Level (UNEMPLOY)
+fred_more = ["EMRATIO","UNEMPLOY"]
+dataframes = []
+for ind in fred_more:
+    df = pd.DataFrame(fred.get_series(ind, observation_start='2000-1-1'))
+    df.index.names = ['date']
+    dataframes.append(df)
+
+counter = 0
+for dataframe in dataframes:
+    print(fred_more[counter])
+    print(df.head())
+    print(df.tail())
+    counter = counter + 1
+
+addition = reduce(lambda x, y: pd.merge(x, y, on='date'), dataframes)
+addition.columns = fred_more
+addition.to_csv("Resources/additional.csv")
+
