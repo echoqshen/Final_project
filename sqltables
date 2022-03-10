@@ -36,7 +36,7 @@ SELECT * FROM gender;
 SELECT * FROM race;
 SELECT * FROM overall_monthly;
 
-SELECT gender.Rate_Men, gender.Rate_Women,
+SELECT gender.DATE, gender.Rate_Men, gender.Rate_Women,
 education.Rate_High_School,
 education.Rate_Bachelors,
 education.Rate_Masters,
