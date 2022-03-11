@@ -55,3 +55,66 @@ function buildMetadata(date) {
 
   });
 }
+
+// create the buildChart for data display
+function buildCharts(date) {
+  //Use d3.json to load and retrieve the gender.json file 
+  d3.json("gender.json").then((data) => {
+    //Create a variable that holds the samples array. 
+    var unemployed = data.gender;
+    //Create a variable that filters the dates for the object with the desired date.
+    var resultUnEmployed = unemployed.filter(sampleObj => sampleObj.DATE == date);
+
+    //Create a variable that filters the gender array for the object with the desired sample number.
+    var sampleDate = data.dates.filter(sampleObj => sampleObj.dates == date);
+
+    //Create a variable that holds the first date in the array.
+    var result = resultUnEmployed[0];
+
+    //Create a variable that holds the first date in the gender array.
+    var number = sampleDate[0];
+
+    //Create variables that hold the men and women unemployment rates.
+    var men = result.Rate_Men;
+    
+    var women = result.Rate_Women;
+
+    //Create the men and women trace for the line graph. 
+    var menTrace = [{
+      type: 'scatter',
+      x: number,
+      y: men,
+      mode: 'lines',
+      line: {
+        dash: 'dashdot',
+        width: 4
+      }
+    }];
+
+    var womenTrace = [{
+      type: 'scatter',
+      x: number,
+      y: women,
+      mode: 'lines',
+      line: {
+        dash: 'solid',
+        width: 4
+      }
+    }];
+
+    var trace = [menTrace, womenTrace]
+
+    // 9. Create the layout for the bar chart. 
+    var lineLayout = {
+      title: "Unemployment By Gender",
+      hovermode: 'closest',
+      xaxis: sampleDate,
+      yaxis: {
+        range: [0, 10],
+        autorange: false
+      }
+    };
+    //Use Plotly to plot the data with the layout. 
+    Plotly.newPlot("line", trace, lineLayout);
+  });
+}
