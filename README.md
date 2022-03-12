@@ -38,7 +38,7 @@ This rule requires two individuals within the group to approve any pull requests
 
 ## Machine Learning Model
 ####
-Our data is primarily continuous ratehr than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of the end December 2022 or even in the next month.
+Our data is primarily continuous rather than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of the end December 2022 or even in the next month.
 
 One of the machine learning models we will be implementing is the K-Nearest Neighbor (KNN) algorithm. KNN can be used for either linear regression or classification. Four our analysis, we used additional data (
 
