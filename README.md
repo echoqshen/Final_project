@@ -1,4 +1,3 @@
-
 # US Unemployment Analysis
 
 ## Introduction
@@ -7,7 +6,6 @@ Our team decided to analyze US unemployment data and focus on the data from the 
 
 ## Why was this topic selected? 
 ####
-
 We selected this topic because we are interested in the impact that major events can have on the unemployment rate fluctuation. We would like to put our data science skills to the test in order to see how the different variables influence the rate.
 
 ## Our Roadmap
@@ -17,8 +15,6 @@ We collected data sets from the Bureau of Labor Statistics website (BLS) [https:
 For the data exploration phase, we used an API key to scrape data from the St. Louis FRED website. We selected a few reports that are related to the US unemployment rate and mapped it into a DataFrame using the reduce() method, then saved the results into a CSV file. We filtered and cleaned the data with Python to get rid of duplicate or null rows/columns of data, as then combined related categories into a single CSV (i.e. Male and Female data combined into one CSV [gender.csv]). 
 
 Next, once all the CSVs have been sorted and cleaned to only include relevant data, we created the necessary tables to store the data in PgAdmin4. A table was created for each compiled CSV and their respective CSV was imported into each table. We also wrote a query to join two tables, using strictly the database language.
-
-
 
 ## Technologies In Use
 ####
@@ -42,9 +38,8 @@ This rule requires two individuals within the group to approve any pull requests
 
 ## Machine Learning Model
 ####
-The question we are looking to answer is: what the unemployment rate will be at the end of the end December 2022. Because our prediction is a type of forecasting, the machine learning model that appears to fit our needs is a neural network model. 
+Our data is primarily continuous ratehr than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of the end December 2022 or even in the next month.
 
-The machine learning model we will be implementing is the K-Nearest Neighbor (KNN) algorithm. KNN can be used for either linear regression or classification.
+One of the machine learning models we will be implementing is the K-Nearest Neighbor (KNN) algorithm. KNN can be used for either linear regression or classification. Four our analysis, we used additional data (
 
-
-
+We are also exploring the AutoRegressive Integrated Moving Average (ARIMA) machine learning model. This is a type of time series forecasting model. Forecasting is a popular ML method to use when you want to predict the future values the series is going to take. Depending on the frequency, a time series can be of yearly (ex: annual budget), quarterly (ex: expenses), monthly (ex: air traffic), weekly (ex: sales qty), daily (ex: weather), hourly (ex: stocks price), minutes (ex: inbound calls in a call canter) and even seconds wise (ex: web traffic). This fits our analysis since we are trying to determine the unemployment rate either at the end of this year in December 2022 or even at the end of next month, as the lowest frequency unit for unemployment rate data is typically released monthly.
