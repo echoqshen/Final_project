@@ -14,7 +14,17 @@ We collected data sets from the Bureau of Labor Statistics website (BLS) [https:
 
 For the data exploration phase, we used an API key to scrape data from the St. Louis FRED website. We selected a few reports that are related to the US unemployment rate and mapped it into a DataFrame using the reduce() method, then saved the results into a CSV file. We filtered and cleaned the data with Python to get rid of duplicate or null rows/columns of data, as then combined related categories into a single CSV (i.e. Male and Female data combined into one CSV [gender.csv]). 
 
-Next, once all the CSVs have been sorted and cleaned to only include relevant data, we created an AWS RDS cloud database and linked it to Postgres/pgAdmin4. From pgAdmin4, the necessary SQL queries were written and ran to create the necessary tables to store the data in PgAdmin4. A table was created for each compiled CSV and their respective CSV was imported into each table. We also wrote a query to join two tables, using strictly the database language.
+Next, once all the CSVs have been sorted and cleaned to only include relevant data, we created an AWS RDS cloud database and linked it to Postgres/pgAdmin4.
+
+![aws](Graphs/aws.png)
+
+From pgAdmin4, the necessary SQL queries were written and ran to create the necessary tables to store the data in PgAdmin4. A table was created for each compiled CSV and their respective CSV was imported into each table. We also wrote a query to join two tables, using strictly the database language.
+
+![sqlqueries](Graphs/sqlqueries.png)
+
+Since this database was created a linked by one member, the other memebrs of the group are able to access the database and contents by executing the following code:
+
+![rds_code](Graphs/rds.png)
 
 ## Technologies In Use
 ####
