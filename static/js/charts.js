@@ -55,6 +55,13 @@ function buildMetadata(date) {
   });
 }
 
+
+// Attach an event to listen for changes to each filter
+d3.selectAll(".filter").on("change", updateFilters);
+
+// Build the table when the page loads
+buildTable(tableData);
+
 // create the buildChart for data display
 function buildCharts(date) {
   //Use d3.json to load and retrieve the gender.json file 
@@ -119,10 +126,12 @@ function buildCharts(date) {
     var menRate = {
       x: number,
       y: men,
+      type: 'scatter'
     };
     var womenRate = {
       x: number,
       y: women,
+      type: 'scatter'
     };
     var data = [menRate, womenRate];
     var layout = {
