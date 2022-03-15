@@ -1,6 +1,7 @@
 #files to ignore
 README.md 
 AD_ReadME.docx 
+config.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
