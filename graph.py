@@ -17,7 +17,7 @@ start_date = '2000-01-01'
 end_date =  '2022-03-09'
 dates = pd.date_range(start_date, end_date, freq='MS')
 fig = go.FigureWidget()
-fig.update_layout(title="blah blah blah")
+fig.update_layout(title="Rate Comparison")
 graph_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
 "CIVPART","PSAVERT","MPRIME", "LNS14000006"]
 for d in graph_indexes:

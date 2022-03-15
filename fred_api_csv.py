@@ -36,7 +36,7 @@ for dataframe in dataframes:
 
 combined = reduce(lambda x, y: pd.merge(x, y, on='date'), dataframes)
 combined.columns = fred_indexes
-# combined.to_csv("Resources/combine.csv")
+combined.to_csv("Resources/combine.csv")
 
 # Employment-Population Ratio (EMRATIO)
 # Unemployment Level (UNEMPLOY)
