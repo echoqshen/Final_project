@@ -19,9 +19,14 @@ dates = pd.date_range(start_date, end_date, freq='MS')
 fig = go.FigureWidget()
 fig.update_layout(title="Rate Comparison")
 
+
 graph_indexes = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL','JTU5100JOL','JTU5200JOL']
 
 counter = 0
+
+graph_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
+"CIVPART","PSAVERT","MPRIME", "LNS14000006"]
+
 for d in graph_indexes:
     # scrape API to dataframe
     df = pd.DataFrame(fred.get_series(d, observation_start='2000-1-1'))
