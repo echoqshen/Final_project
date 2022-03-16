@@ -1,7 +1,7 @@
 from fredapi import Fred
 from pymongo import MongoClient
 import pandas as pd
-from config import fred_key, mongo_user, mongo_password
+from config import fred_key
 from functools import reduce
 fred = Fred(api_key=fred_key)
 import matplotlib.pyplot as plt
@@ -20,12 +20,13 @@ fig = go.FigureWidget()
 fig.update_layout(title="Rate Comparison")
 
 
-graph_indexes = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL','JTU5100JOL','JTU5200JOL']
+graph_indexes = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL',
+'JTS9000JOL', 'CUSR0000SAF112','JTU5100JOL','JTU5200JOL']
 
 counter = 0
 
-graph_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
-"CIVPART","PSAVERT","MPRIME", "LNS14000006"]
+# graph_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
+# "CIVPART","PSAVERT","MPRIME", "LNS14000006"]
 
 for d in graph_indexes:
     # scrape API to dataframe
@@ -58,4 +59,4 @@ for d in graph_indexes:
     # fig.layout.xaxis.ticktext =  ['2000','2007', 'Financial Crisis Starts', '2008', 'Financial Crisis Ends', '2009', '2010', '2011',  '2012', '2013', '2014', '2015', '2016','2022-03-09']
 
 # dump graph to html
-fig.write_html("Event_Impact_new.html")
+fig.write_html("Event_Impact.html")
