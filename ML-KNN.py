@@ -7,9 +7,6 @@ fred = Fred(api_key=fred_key)
 ### these are indexes chosen from the fred API which has US financial data 
 ### these indexes contained monthly data for a reasonable lenght of time 
 ## we considered them likely to be correlated with unemployment levels 
-# fred_indexes = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL',
-# 'JTS9000JOL', 'CUSR0000SAF112','JTU5100JOL','JTU5200JOL']
-
 fred_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
 "CIVPART","PSAVERT","MPRIME", "LNS14000006"]
 
@@ -23,7 +20,6 @@ for ind in fred_indexes:
     df = pd.DataFrame(fred.get_series(ind, observation_start='2000-1-1'))
     df.index.names = ['date']
     dataframes.append(df)
-
 
 counter = 0
 for dataframe in dataframes:
@@ -40,8 +36,7 @@ df = combined
 # print(df.head())
 
 # use pandas library to randomly sample data from the dataset
-## sklean has "test train split"
-## this function randomly samples the data and splits into 2 groups 
+## sklean has "test train split", this function randomly samples the data and splits into 2 groups 
 ## a treatment group and a control group or a training group for the model and a test group for the model
 from sklearn.model_selection import train_test_split
 train, test = train_test_split(df, test_size = 0.3)
@@ -66,11 +61,9 @@ x_test = pd.DataFrame(x_test_scaled)
 # import the k nearest neighbors machine learning algorithm "knn" by looking for similar values to the ones we are trying to predict
 from sklearn import neighbors
 
-# from sklearn.naive_bayes import GaussianNB
-
 # we plot the mean square error of the machine learnign results to try and pick a number of nearest neighbors that
 # will work best. Too low and we overfit the data. Too high we lose predictive ability. 
-# we tested and found that a value of 7 looked good there was a local minimum in the plot . 
+# we tested and found that a value of 5 looked good there was a local minimum in the plot . 
 from sklearn.metrics import mean_squared_error 
 from math import sqrt
 import matplotlib.pyplot as plt
@@ -89,3 +82,21 @@ for K in range(20):
 curve = pd.DataFrame(rmse_val) #elbow curve 
 curve.plot()
 plt.show()
+
+model = neighbors.KNeighborsRegressor(n_neighbors = 5)
+#model.fit(x_train, y_train)  #fit the model
+#pred_y=model.predict(x_test) #make prediction on test set
+
+
+from sklearn.svm import SVR
+
+regressor = SVR(kernel='rbf')
+regressor.fit(x_train, y_train)
+y_pred = regressor.predict(x_test)
+
+#error = sqrt(mean_squared_error(y_test,pred_y)) #calculate rmse
+
+score=regressor.score(x_train,y_train)
+print("model score")
+print(score)
+
