@@ -8,24 +8,25 @@
   <title>US Unemployment Rates</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/css/style.css">
-</head>
+
 
 <body>
 
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1 class="display-4"><font color="white">Unemployment Prediction of 2022</font></h1>
+
+        <h1 class="display-4"><font color="black">Unemployment Prediction of 2022</font></h1>
         <p><font color="white">Use the interactive charts below to explore the dataset</font></p>
       </div>
     </div>
     <div class="container d-grid gap-3">
         <div class="col-md-8 mx-auto p-2 bg-light border">
           <span class="align-middle">
-          <h3>What will the unemployment rates for the United States look like in December 2022?</h3> 
+          <font color="white"><h3>What will the unemployment rates for the United States look like in December 2022?</h3> 
           <p>
             Filler text here
-          </p>
+          </p></font>
           </span>
         </div>
       </div>
@@ -33,7 +34,8 @@
     <div class="row">
       <div class="col-md-2 d-grid gap-3">
         <div class="well">
-          <h5>Categories:</h5>
+
+          <h5>Dates:</h5>
           <!-- <select id="selDataset"></select> -->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
@@ -44,6 +46,7 @@
         </div>
       </div>
       <div class="col-md-5">
+        <div id="line"></div>
         <p></p>
       </div>
       <div class="col-md-5">
@@ -57,7 +60,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  
+  <script src="gender.json"></script>
+  <script src="static/js/charts.js"></script>
+
 
 </body>
 

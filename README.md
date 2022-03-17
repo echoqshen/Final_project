@@ -45,6 +45,9 @@ Since this database was created a linked by one member, the other memebrs of the
 
 ![rds_code](Graphs/rds.png)
 
+Next, once all the CSVs have been sorted and cleaned to only include relevant data, we created an AWS RDS cloud database and linked it to Postgres/pgAdmin4. From pgAdmin4, the necessary SQL queries were written and ran to create the necessary tables to store the data in PgAdmin4. A table was created for each compiled CSV and their respective CSV was imported into each table. We also wrote a query to join two tables, using strictly the database language.
+
+
 ## Machine Learning Model
 ####
 The analysis phase of this project is done through our machine learning models. Our data is primarily continuous rather than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of December 2022 or even in the next month.
