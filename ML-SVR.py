@@ -5,8 +5,11 @@ from functools import reduce
 fred = Fred(api_key=fred_key)
 import matplotlib.pyplot as plt
 
-fred_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","INTDSRUSM193N","T10YIEM","TB3MS", "CPALTT01USM657N",
-"CIVPART","PSAVERT","MPRIME", "LNS14000006"]
+# fred_indexes = ["EMRATIO","UNEMPLOY", 'JTSJOL', 'JTS3000JOL', 'JTS6000JOL',
+# 'JTS9000JOL', 'CUSR0000SAF112','JTU5100JOL','JTU5200JOL']
+
+fred_indexes = ["UNRATE","FEDFUNDS","CPIAUCSL","GS10","M2SL","M1SL", "CSUSHPINSA",
+"CIVPART","PSAVERT","CES0500000003", "TOTALSA"]
 
 ### we used a python library call fred api to query the API endpoint and create dataframes
 dataframes = []
@@ -70,26 +73,26 @@ import plotly.graph_objects as go # for data visualization
 import plotly.express as px # for data visualization
 
 # # Create a scatter plot
-# fig = px.scatter(df, x, y, 
-# opacity=0.8, color_discrete_sequence=['black'])
+fig = px.scatter(df, x=df['M1SL'], y=df['UNRATE'], 
+opacity=0.8, color_discrete_sequence=['black'])
 
-# # Change chart background color
-# fig.update_layout(dict(plot_bgcolor = 'white'))
+# Change chart background color
+fig.update_layout(dict(plot_bgcolor = 'white'))
 
-# # Update axes lines
-# fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgrey', 
-# zeroline=True, zerolinewidth=1, zerolinecolor='lightgrey', 
-# showline=True, linewidth=1, linecolor='black')
+# Update axes lines
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgrey', 
+zeroline=True, zerolinewidth=1, zerolinecolor='lightgrey', 
+showline=True, linewidth=1, linecolor='black')
 
-# fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgrey', 
-# zeroline=True, zerolinewidth=1, zerolinecolor='lightgrey', 
-# showline=True, linewidth=1, linecolor='black')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgrey', 
+zeroline=True, zerolinewidth=1, zerolinecolor='lightgrey', 
+showline=True, linewidth=1, linecolor='black')
 
-# # Set figure title
-# fig.update_layout(title=dict(text="House Price Based on Distance from the Nearest MRT", 
-# font=dict(color='black')))
+# Set figure title
+fig.update_layout(title=dict(text="What is related to unemployment", 
+font=dict(color='black')))
 
-# # Update marker size
-# fig.update_traces(marker=dict(size=3))
+# Update marker size
+fig.update_traces(marker=dict(size=3))
 
-# fig.show()
+fig.show()
