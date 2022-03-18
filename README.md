@@ -49,6 +49,7 @@ Though the datasets are housed in the cloud and linked to the database, the data
 
 ![rds_code](Graphs/rds.png)
 
+
 ### Machine Learning Model
 ####
 The analysis phase of this project is implemented through our machine learning models. Our data is primarily continuous rather than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of December 2022 or even in the next month.
