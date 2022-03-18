@@ -1,40 +1,42 @@
 CREATE TABLE gender (
 	DATE date,
-	Rate_Men decimal,
-	Rate_Women decimal
+	Rate_Men float,
+	Rate_Women float
 );
 	
 CREATE TABLE education (
 	DATE date,
-	Rate_High_School decimal,
-	Rate_Bachelors decimal,
-	Rate_Masters decimal,
-	Rate_Doctoral decimal
+	Rate_High_School float,
+	Rate_Bachelors float,
+	Rate_Masters float,
+	Rate_Doctoral float
 );
 
 CREATE TABLE race (
 	DATE date,
-	Rate_Asian decimal,
-	Rate_Black decimal,
-	Rate_White decimal,
-	Rate_Latino decimal
+	Rate_Asian float,
+	Rate_Black float,
+	Rate_White float,
+	Rate_Latino float
 );
 
 CREATE TABLE overall_monthly (
 	DATE date,
-	Rate_Overall decimal
+	Rate_Overall float
 );
 
 DROP TABLE education;
 DROP TABLE race;
 DROP TABLE gender;
 DROP TABLE overall_monthly;
+DROP TABLE joined;
 
 
 SELECT * FROM education;
 SELECT * FROM gender;
 SELECT * FROM race;
 SELECT * FROM overall_monthly;
+SELECT * FROM joined;
 
 SELECT gender.DATE, gender.Rate_Men, gender.Rate_Women,
 education.Rate_High_School,
@@ -49,3 +51,17 @@ FROM gender
 INNER JOIN education ON gender.DATE=education.DATE
 INNER JOIN race
 ON gender.DATE=race.DATE;
+
+CREATE TABLE joined (
+	DATE date,
+	Rate_High_School float,
+	Rate_Bachelors float,
+	Rate_Masters float,
+	Rate_Doctoral float,
+	Rate_Men float,
+	Rate_Women float,
+	Rate_Asian float,
+	Rate_Black float,
+	Rate_White float,
+	Rate_Latino float
+);
