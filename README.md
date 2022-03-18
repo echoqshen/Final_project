@@ -24,6 +24,7 @@ In this project we will be using the following:
 * Machine Learning
 
 ## Our Roadmap
+### Data Exploration and Analysis
 ####
 We collected data sets from the Bureau of Labor Statistics website (BLS) [https://www.bls.gov/data/], a national organization that provides data on labor market activity, working conditions, price changes, and productivity in the US economy. Additionally, we examined datasets from The Federal Reserve Bank of St. Louis' Federal Reserve Economic Database (FRED) [https://fred.stlouisfed.org/], which is one of the nation's leading trusted sources for economic data. The CSV files we retrieved contain 20+ years (2000-2021) of information which we feel is a sufficient historical view that can be leveraged in order to predict a future outcome. Some of the data columns that we are reviewing include data on educational levels, race, and gender. 
 
@@ -62,6 +63,6 @@ We are also exploring the AutoRegressive Integrated Moving Average (ARIMA) machi
 
 ### Dashboard
 ####
-To fully visualize the results of our analysis, we used JavaScript along with HTML and CSS to create an interactive web page that houses all the resulting graphs. 
+To fully visualize the results of our analysis, we used JavaScript along with HTML and CSS to create an interactive web page that houses all the resulting graphs. Our interactive dashboard allows the user the ability to click on a drop down box to filter the graphs based on specific parameters such as the date and the category of the data. 
 
 ![dashboard](Graphs/dashboard.png)
