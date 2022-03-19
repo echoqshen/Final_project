@@ -45,7 +45,8 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                Below is a sample tableau insert. Just for reference
+                The historical data that was collected for this project comes from two sources: the Bureau of Labor Statistics (BLS) and The Federal Reserve Bank of St. Louis' Federal Reserve Economic Database (FRED). These two sources provided the foundation of the beginning of the predictions. Some of the categories being used in the predicitions are the historical unemployment rates from 2000 to 2021 recorded by race, overall labor force participation, inflation rate, and more as seen below. This collected data was scraped from the websites using API keys and placed into a PostgreSQL database once cleaned. This process allowed for the data to be properly used in the following machine learning models. 
+                
                 
             </div>
           </div>
@@ -60,7 +61,8 @@
           </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-              Another placeholder to see how this will look with correct data
+              With data that is continuous, it was important to utilize machine learning methods that would provide numerical results. The first model implemented was the K-Nearest Neighbor (KNN) algorithm. This particular model can be used for either linear regression or classification, however, for this prediction project the focus was on linear regression. The data collected from the API calls was split into training and testing sets to test the accuracy of the model. The first test with this model, as seen below, was using data from 2001 to attempt to predict the rates from 2002 in order to test the accuracy. It was discovered that the model was overfitting and could not predict future dates with the accuracy the project needed. 
+              <img src="KNN.png" alt="KNN Model Sample">
               
             </div>
           </div>
@@ -75,7 +77,7 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              Once it was decided that the first model, KNN, would not create an accurate predicition, a new method was selected. The next model explored was AutoRegressive Integrated Moving Average (ARIMA). This particular model utilizes a type of time series forecasting model. Forecasting is a popuilar machine learning method to use when predicting the future values the series in question will take. A time series can be of a yearly, quarterly, monthly, weekly, daily, hourly, minutes, and seconds frequency. With unemployment rates being recorded monthly and yearly by most reporting agencies, this particular model best fits the current data sets available in structure. 
             </div>
           </div>
         </div>
