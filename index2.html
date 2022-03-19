@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -45,8 +46,10 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                The historical data that was collected for this project comes from two sources: the Bureau of Labor Statistics (BLS) and The Federal Reserve Bank of St. Louis' Federal Reserve Economic Database (FRED). These two sources provided the foundation of the beginning of the predictions. Some of the categories being used in the predicitions are the historical unemployment rates from 2000 to 2021 recorded by race, overall labor force participation, inflation rate, and more as seen below. This collected data was scraped from the websites using API keys and placed into a PostgreSQL database once cleaned. This process allowed for the data to be properly used in the following machine learning models. 
-                
+                The historical data that was collected for this project comes from two sources: the Bureau of Labor Statistics (BLS) and The Federal Reserve Bank of St. Louis' Federal Reserve Economic Database (FRED). These two sources provided the foundation of the beginning of the predictions. Some of the categories being used in the predicitions are the historical unemployment rates from 2000 to 2021 recorded by race, gender, and education as seen below. This collected data was scraped from the websites using API keys and placed into a PostgreSQL database once cleaned. This process allowed for the data to be properly used in the following machine learning models. 
+                <div class="col-md-5">
+                  <div id="gender"></div>
+                </div>
                 
             </div>
           </div>
@@ -111,6 +114,6 @@
         </div>
         
     </div>
-
+  <script src="static/js/gender.js"></script>
 </body>
 </html>
