@@ -50,6 +50,15 @@
                 <div class="col-md-5">
                   <div id="gender"></div>
                 </div>
+                <div class="col-md-5">
+                  <div id="education"></div>
+                </div>
+                <div class="col-md-5">
+                  <div id="race"></div>
+                </div>
+                <div class="col-md-5">
+                  <div id="national"></div>
+                </div>
                 
             </div>
           </div>
@@ -65,7 +74,7 @@
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
               With data that is continuous, it was important to utilize machine learning methods that would provide numerical results. The first model implemented was the K-Nearest Neighbor (KNN) algorithm. This particular model can be used for either linear regression or classification, however, for this prediction project the focus was on linear regression. The data collected from the API calls was split into training and testing sets to test the accuracy of the model. The first test with this model, as seen below, was using data from 2001 to attempt to predict the rates from 2002 in order to test the accuracy. It was discovered that the model was overfitting and could not predict future dates with the accuracy the project needed. 
-              <img src="KNN.png" alt="KNN Model Sample">
+              <img src="/Graphs/KNN.png" alt="KNN Model Sample">
               
             </div>
           </div>
@@ -80,23 +89,10 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              Once it was decided that the first model, KNN, would not create an accurate predicition, a new method was selected. The next model explored was AutoRegressive Integrated Moving Average (ARIMA). This particular model utilizes a type of time series forecasting model. Forecasting is a popuilar machine learning method to use when predicting the future values the series in question will take. A time series can be of a yearly, quarterly, monthly, weekly, daily, hourly, minutes, and seconds frequency. With unemployment rates being recorded monthly and yearly by most reporting agencies, this particular model best fits the current data sets available in structure. 
+              Once it was decided that the first model, KNN, would not create an accurate predicition, a new method was selected. The next model explored was AutoRegressive Integrated Moving Average (ARIMA). This particular model utilizes a type of time series forecasting model. Forecasting is a popuilar machine learning method to use when predicting the future values the series in question will take. A time series can be of a yearly, quarterly, monthly, weekly, daily, hourly, minutes, and seconds frequency. With unemployment rates being recorded monthly and yearly by most reporting agencies, this particular model best fits the current data sets available in structure. This particular type of machine learning also requires that data be stationary for best results when performing testing and training. The overall unemployment rates CSV file was used as the sample data for three main tests of the ARIMA method. In the initial test, it was found that the unemployment rates provided for the next twelve months were suspiciously high, ranging from six to seventeen percent. It is suspected that the team did not have a full understanding of the machine learning method to make appropriate adjustments. The second attempt was created following similar methods for predicting temperature, however, the model provided a consisent result of 6.7% for every month. When adjustments were made, the unemployment prediction produced was stationary at 3.9%. This percentage rate was in line with the historical data. However, the second test of the ARIMA model did not provide variation in results which leaves the team to believe that the model was not successful despite being within range of acceptable results and creating accurate testing and training scores. The final attempt using the ARIMA model could not be moved past the training and testing phase as it did not produce future predictions like the previous two attempts. Overall, the model seemed extremely promising based on the research performed, but did not meet the team's standards and expectations. 
+              <img src="/Graphs/Arima_Test_1_Results.png" alt="ARIMA Model Sample">
             </div>
           </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  The Third Machine Learning Model - SVR
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
-            </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingFive">
@@ -108,7 +104,7 @@
             </div>
             <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
               <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                After completing an exploration of the KNN and ARIMA machine learning models, it was discovered that both models had their pros and cons. The ARIMA model best fit the goals of the project itself. The model was built to predict similar concepts built around time frequencies. Yet, when the model was put through testing and training, the results proved too high or simply predicting the same percentage continuously. The KNN model on the other hand, did not have the same issues with predicting future unemployment rates. Testing the model proved to show a high accuracy. This high accuracy was a concern of being overfitting based on the single CSV file that was used for sample data. In both cases, more time and further research would provide a clearer picture of which model could accurately predict future unemployment rate in the United States based on a multitude of factors. 
               </div>
             </div>
         </div>
