@@ -34,7 +34,11 @@ Next, once all the CSVs were sorted and cleaned to only include relevant data, w
 
 ![aws](Graphs/aws.png)
 
-In AWS, an S3 bucket was created where the cleaned CSVs were uploaded to house our data in the cloud. We were able to access/read these CSVs from Google Colab/PySpark. 
+In AWS, an S3 bucket was created where the cleaned CSVs were uploaded to house our data in the cloud.
+
+![s3bucket](Graphs/s3bucket.png)
+
+We were able to access/read these CSVs from Google Colab/PySpark. 
 
 ![pysparkS3bucket](Graphs/pysparkS3bucket.png)
 
@@ -51,14 +55,19 @@ Though the datasets are housed in the cloud and linked to the database, the data
 ![rds_code](Graphs/rds.png)
 
 
-### Machine Learning Model
+## Machine Learning Models
 ####
 The analysis phase of this project is implemented through our machine learning models. Our data is primarily continuous rather than categorical. Therefore, we will not be predicting a binary outcome, but rather a numerical outcome. The prediction we are trying to make is what the unemployment rate will be at the end of December 2022 or even in the next month.
 
+### K-Neareast Neighbor (KNN)
 One of the machine learning models we will be implementing is the K-Nearest Neighbor (KNN) algorithm. KNN can be used for either linear regression or classification. For our analysis, we intend to use additional data (job openings for various industries and consumer prices for meats) that were pulled from the API call and split them into training and testing sets. The data on job openings and meat prices will be used as the features (X) and the unemployment rate will be used as the target (Y). To confirm that this model is accurate and a good fit, we decided it will be best to use only 1 year's worth of data (Year 2001) and try to predict the next year's worth of data (Year 2002). A graph will then be generated to visualize the results. Before this though, we practiced by using the API to pull other sorts of data to see if it would work. Please refer to the [ML-KNN.py](ML-KNN.py) file for reference. The code seemed to run successfully, and a graph was generated. See below for the results. We intend to revamp the code to run for the aforementioned releveant datasets next.
 
 ![KNN](Graphs/KNN.png)
 
+### Support Vector Regression (SVR)
+
+
+### AutoRegressive Integrated Moving Average (ARIMA)
 We are also exploring the AutoRegressive Integrated Moving Average (ARIMA) machine learning model, a type of time series forecasting model. Forecasting is a popular ML method to use when predicting the future values the series is going to take. Depending on the frequency, a time series can be of yearly (ex: annual budget), quarterly (ex: expenses), monthly (ex: air traffic), weekly (ex: sales qty), daily (ex: weather), hourly (ex: stocks price), minutes (ex: inbound calls in a call center) and even seconds wise (ex: web traffic). This fits our analysis since unemployment rate data is typically released monthly/yearly and our intention is to predict possible values for the unemployment rate at either the end of the year in December 2022 or even at the end of next month. We plan to use a Time Series model to quantify future unemployment rates using singular dataset CSVs each time to predict what the US national unemployment rate will be in general, as well as for each of the different variables, by December 2022.
 
 The mathematical processes behind how the ARIMA test works is a bit complicated and the model itself has multiple variations, though they all work from the same fundamentals. ARIMA works best on datasets that have stationarity (no trends). There is a method known as "differencing" that can be used to make a dataset stationary if it isn't, but luckily our datasets were confirmed to already be stationary by running a few handy lines of Python code. Without going into full detail of how the ARIMA model works, one of the most critical components to take note of is the best order of the ARIMA model to use, which is based on the lowest Akaike Information Criterion (AIC) score. The order is a combination of 3 number values in the format of (p,d,q), where p refers to the number of lag observations in the model, d referring to the number of times that raw observations are differenced, and q referring to the size of the moving average window. A handy built-in python package and a few lines of template code were used to help us determine this order for our model, which turned out to be (0,1,0). 
@@ -66,6 +75,8 @@ The mathematical processes behind how the ARIMA test works is a bit complicated 
 We attempted the ARIMA test in multiple ways, however, no single variation was able to provide us a reliable result. All attempted variations had their own distinct issues along the way that we could not find solutions for in the given time, though we’re sure they exist. All 3 variations were conducted using the overall national Unemployment Rate dataset from 2000-2021 (overall_monthly.csv). We intended to first find the predicted national rate for all twelve months in 2022. If successful, then we intended to re-apply the same test to the rest of the different categories. However, since we ran into issues even with the first dataset, we concluded that the same issues would persist regardless if any other different categorical dataset were used.
 
 For instance, in the first version of the test we ran, we copied and reformatted some template code used from a previous test example that was originally meant and used for temperature forecasting that predicted temperatures for the next 7 days. We managed to adjust the code enough for it to make predictions on unemployment rate for the next 12 months. However, the resulting numbers were suspiciously way too high (between 6.6 - 17.8). We concluded that there may be some part of the code that we don’t fully understand and did not adjust accordingly enough. Therefore, this variation did not prove to be considered reliable. Please see Arima_Test_1.ipynb for additional reference.
+
+![Arima_Test_1_Results](Graphs/Arima_Test_1_Results.png)
 
 In a 2nd variation attempt at the ARIMA test, we once again followed a template that was originally used for temperature prediction, but from a different code source. We generated a P-value that was less than 0.05, which is ideal. The 'best order model' combination that was generated was once again (0,1,0). This variation seemed to work well up until making predictions after training the model. We followed the suggested model combination but the predictions on the test set resulted in an unchanging/fixed unemployment rate prediction number (6.7). The predicted test set mean unemployment rate was 5.358 and the Root Mean Square Error (rmse) was 1.56, which appears to also be ideal. The code used to produce the resulting predictions for the next months was also problematic because it would only produce at least 30 prediction results. No amount of code tweaking was successful and we could not figure out how to adjust the code to only produce the next 12 results (probably because the original usage was meant for daily temperature predictions). This would be futile anyways though, because the results were also a fixed number (3.9). We suspect that this is occurring due to the fixed nature of the rate prediction from the previous step. Though 3.9 seems to be a reasonable rate number for unemployment, we know this is not reliable because it is fixed for every month. A successful model would have produced fluctuating numbers. Please refer to Arima_Test_2.ipynb for additional reference.
 
