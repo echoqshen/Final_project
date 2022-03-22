@@ -15,6 +15,9 @@ In this project we will be using the following:
 * Pandas 
 * VSCode 
 * Jupyter Notebook 
+* JavaScript
+* CSS
+* HTML
 * PGAdmin 
 * MongoDB 
 * Python 
@@ -86,6 +89,6 @@ To conclude, between KNN, SVR, and ARIMA, the KNN model proved to be the most "r
 
 ### Dashboard
 ####
-To fully visualize the results of our analysis, we used JavaScript and its d3 library along with HTML and CSS to create an interactive web page that houses all the resulting graphs. Our interactive dashboard allows the user the ability to click on a drop down box to filter the graphs based on specific parameters such as the date and the category of the data. Our website can be accessed by running the [index2.html](index2.html) through a Live Server, which works in conjunction with our supporting files contained in subfolders [here](static). See below for a snippet of our webpage.
+To fully visualize the results of our analysis, we used JavaScript and its d3 library along with HTML and CSS to create an interactive web page that houses all the resulting graphs. Our interactive dashboard allows the user the ability to click on a collapsible tab to see the steps taken by the team to produce the results from our exploration. Our website can be accessed by running the [index2.html](index2.html) through a Live Server, which works in conjunction with our supporting files contained in subfolders [here](static). See below for a snippet of our webpage.
 
-![dashboard](Graphs/dashboard.png)
+![dashboard](https://github.com/echoqshen/final/blob/victoria_branch/Resources/Dashboard%20Screenshot.PNG)
