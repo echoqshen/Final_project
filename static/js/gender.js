@@ -236,3 +236,41 @@ Plotly.d3.csv('Resources/overall_monthly.csv', function(err, rows){
     Plotly.newPlot('national', data, layout);
   
 })
+
+// create a graph for the arima results
+//create a graph for the national unemployment rate
+Plotly.d3.csv('Arima_Test_1_Results.csv', function(err, rows){
+    function unpack(rows, key) {
+        return rows.map(function(row) {return row[key]; });
+    }
+  
+    var trace1 = {
+        type: "scatter",
+        mode: "lines",
+        name: "Predicted Unemployment",
+        x: [1,2,3,4,5,6,7,8,9,10,11,12],
+        y: unpack(rows, 'Prediction Rate'),
+        line: {
+        color: 'green',
+        width: 3,
+        shape: "spline"
+        }
+    }
+  
+    var data = [trace1];
+  
+    var layout = {
+        title: "ARIMA Test Unemployment Prediction of 2022",
+        xaxis: {
+            title: 'Month'
+        },
+        yaxis: {
+            title: 'Percentage'
+        }
+
+    };
+  
+  
+    Plotly.newPlot('arima', data, layout);
+  
+})
