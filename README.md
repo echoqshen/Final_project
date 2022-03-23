@@ -4,6 +4,8 @@
 ####
 Unemployment records in the United States have been officially recorded by various organizations since 1929. Early each month, the Bureau of Labor Statistics (BLS) of the U.S. Department of Labor announces the total number of employed and unemployed people in the US for the previous month, along with many characteristics about them. Unemployment rate is calculated by dividing the civilian labor force by the amount of people who are unemployed. To be considered "unemployed," the individual must be at least 16 years old and have not worked in a part/full time work in at least 4 weeks but have been actively looking for work in that same time frame. Our team decided to analyze US unemployment data and focus on the data from the years 2000 - 2021. Our goal was to analyze the unemployment rate data from this time range to make predictions on the next year, 2022. Since BLS releases unemployment rate data in discrete monthly increments, we plan to predict discrete values for each month in 2022. We selected this topic because we are interested in the impact that major events can have on the unemployment rate fluctuation. We would like to put our data science skills to the test in order to see how the different variables influence the rate.
 
+Our analysis break down can also be viewed from this [presentation](https://docs.google.com/presentation/d/1PtN31rmfgU6ekRwWS0OqpkzakGbplJctV2rVTb7Kuys/edit#slide=id.g118be045ebf_6_273).
+
 ## Technologies In Use
 ####
 In this project we will be using the following: 
@@ -27,7 +29,7 @@ In this project we will be using the following:
 ####
 We collected data sets from the Bureau of Labor Statistics website (BLS) [https://www.bls.gov/data/], a national organization that provides data on labor market activity, working conditions, price changes, and productivity in the US economy. Additionally, we examined datasets from The Federal Reserve Bank of St. Louis' Federal Reserve Economic Database (FRED) [https://fred.stlouisfed.org/], which is one of the nation's leading trusted sources for economic data. The CSV files we retrieved contain 20+ years (2000-2021) of information which we feel is a sufficient historical view that can be leveraged in order to predict a future outcome. Some of the data columns that we are reviewing include data on educational levels, race, and gender. 
 
-For the data exploration phase, we used an API key to scrape data from the St. Louis FRED website. We selected a few reports that are related to the US unemployment rate and mapped it into a DataFrame using the reduce() method, then saved the results into a CSV file. We filtered and cleaned the data with Python to get rid of duplicate or null rows/columns of data, as then combined related categories into a single CSV (i.e. separate CSV datasets for Male and Female data combined into one CSV [gender.csv]). 
+For the data exploration phase, we used an API key to scrape data from the St. Louis FRED website. We selected a few reports that are related to the US unemployment rate and mapped it into a DataFrame using the reduce() method, then saved the results into a CSV file. We filtered and cleaned the data with Python to get rid of duplicate or null rows/columns of data, as then combined related categories into a single CSV (i.e. separate CSV datasets for Male and Female data combined into [gender.csv](Resources/gender.csv)). 
 
 Next, once all the CSVs were sorted and cleaned to only include relevant data, we created an AWS RDS cloud database and linked it to Postgres/pgAdmin4 using a connection string.
 
@@ -41,11 +43,11 @@ We were able to access/read these CSVs from Google Colab/PySpark.
 
 ![pysparkS3bucket](Graphs/pysparkS3bucket.png)
 
-From pgAdmin4, SQL queries were written and executed to create the necessary tables to store the data in Postgres/pgAdmin4. A table was created for each compiled CSV and their respective CSV was imported/written into each table via Google Colab/PySpark.
+From pgAdmin4, SQL queries were written and executed to create the necessary tables to store the data in Postgres/pgAdmin4. A table was created for each compiled CSV and their respective CSV was imported/written into each table via Google Colab/PySpark. The full code can be found [here](https://colab.research.google.com/drive/11UVIqkXAEWea_kNUhfWfS8G0ENXdOsIp?authuser=1).
 
 ![pysparkwrite](Graphs/pysparkwrite.png)
 
-We also wrote a query to join multiple tables, strictly using the database language.
+We also wrote a query to join multiple tables, strictly using the database language. All SQL queries written can be found [here](sqltables).
 
 ![postgresquery](Graphs/postgresquery.png)
 
