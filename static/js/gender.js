@@ -10,7 +10,7 @@ Plotly.d3.csv('Resources/gender.csv', function(err, rows){
         x: unpack(rows, 'DATE'),
         y: unpack(rows, 'Rate_Men'),
         line: {
-        color: '#FF8700',
+        color: 'blue',
         width: 3,
         shape: "spline"
         }
@@ -23,7 +23,7 @@ Plotly.d3.csv('Resources/gender.csv', function(err, rows){
         x: unpack(rows, 'DATE'),
         y: unpack(rows, 'Rate_Women'),
         line: {
-        color: '#81827F',
+        color: 'red',
         width: 3,
         shape: "spline"
         }
