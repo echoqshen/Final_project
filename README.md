@@ -2,29 +2,25 @@
 
 ## Introduction
 ####
-Our team decided to analyze US unemployment data and focus on the data from the years 2000 - 2021. 
-
-## Why was this topic selected? 
-####
-We selected this topic because we are interested in the impact that major events can have on the unemployment rate fluctuation. We would like to put our data science skills to the test in order to see how the different variables influence the rate.
+Unemployment records in the United States have been officially recorded by various organizations since 1929. Early each month, the Bureau of Labor Statistics (BLS) of the U.S. Department of Labor announces the total number of employed and unemployed people in the US for the previous month, along with many characteristics about them. Unemployment rate is calculated by dividing the civilian labor force by the amount of people who are unemployed. To be considered "unemployed," the individual must be at least 16 years old and have not worked in a part/full time work in at least 4 weeks but have been actively looking for work in that same time frame. Our team decided to analyze US unemployment data and focus on the data from the years 2000 - 2021. Our goal was to analyze the unemployment rate data from this time range to make predictions on the next year, 2022. Since BLS releases unemployment rate data in discrete monthly increments, we plan to predict discrete values for each month in 2022. We selected this topic because we are interested in the impact that major events can have on the unemployment rate fluctuation. We would like to put our data science skills to the test in order to see how the different variables influence the rate.
 
 ## Technologies In Use
 ####
 In this project we will be using the following: 
-* PostgreSQL 
-* Pandas 
-* VSCode 
-* Jupyter Notebook 
+* PostgreSQL
+* Pandas
+* VSCode
+* Jupyter Notebook
 * JavaScript
 * CSS
 * HTML
-* PGAdmin 
-* MongoDB 
-* Python 
-* AWS 
+* PGAdmin
+* MongoDB
+* Python
+* AWS
 * Google Colab
-* PySpark 
-* Machine Learning
+* PySpark
+* Scikit-learn
 
 ## Our Roadmap
 ### Data Exploration and Analysis
@@ -81,11 +77,19 @@ For instance, in the first version of the test we ran, we copied and reformatted
 
 ![Arima_Test_1_Results](Graphs/Arima_Test_1_Results.png)
 
-In a 2nd variation attempt at the ARIMA test, we once again followed a template that was originally used for temperature prediction, but from a different code source. We generated a P-value that was less than 0.05, which is ideal. The 'best order model' combination that was generated was once again (0,1,0). This variation seemed to work well up until making predictions after training the model. We followed the suggested model combination but the predictions on the test set resulted in an unchanging/fixed unemployment rate prediction number (6.7). The predicted test set mean unemployment rate was 5.358 and the Root Mean Square Error (rmse) was 1.56, which appears to also be ideal. The code used to produce the resulting predictions for the next months was also problematic because it would only produce at least 30 prediction results. No amount of code tweaking was successful and we could not figure out how to adjust the code to only produce the next 12 results (probably because the original usage was meant for daily temperature predictions). This would be futile anyways though, because the results were also a fixed number (3.9). We suspect that this is occurring due to the fixed nature of the rate prediction from the previous step. Though 3.9 seems to be a reasonable rate number for unemployment, we know this is not reliable because it is fixed for every month. A successful model would have produced fluctuating numbers. Please refer to Arima_Test_2.ipynb for additional reference.
+In a 2nd variation attempt at the ARIMA test, we once again followed a template that was originally used for temperature prediction, but from a different code source. We generated a P-value that was less than 0.05, which is ideal. The 'best order model' combination that was generated was once again (0,1,0). This variation seemed to work well up until making predictions after training the model. We followed the suggested model combination but the predictions on the test set resulted in an unchanging/fixed unemployment rate prediction number (6.7). The predicted test set's mean unemployment rate was 5.358 and the Root Mean Square Error (rmse) was 1.56, which appears to also be ideal.
+
+![arimatest2predplot](Graphs/arimatest2predplot.png)
+
+The code used to produce the resulting predictions for the next months was also problematic because it would only produce at least 30 prediction results. No amount of code tweaking was successful and we could not figure out how to adjust the code to only produce the next 12 results (probably because the original usage was meant for daily temperature predictions). This would be futile anyways though, because the results were also a fixed number (3.9). We suspect that this is occurring due to the fixed nature of the rate prediction from the previous step. Though 3.9 seems to be a reasonable rate number for unemployment, we know this is not reliable because it is fixed for every month. A successful model would have produced fluctuating numbers. Please refer to Arima_Test_2.ipynb for additional reference.
+
+![arimatest2futurepred](Graphs/arimatest2futurepred.png)
 
 In the 3rd variation attempt at the ARIMA test, we used another template from a different source, although this time the original template was used in a previous example for monthly shampoo sales prediction. This test proved to be the most relevant though because it produced monthly results as opposed to the previous 2 variations that were used to predict daily results. Once again, this variation started off to be a very promising model. Prior to the final number predictions, code was executed and graphs were produced to ensure that the data was stationary and there were no issues with residuals. We were also to reformat the template code to produce a plot that showed the predicted values against the expected/actual values. The plot showed a very promising result indicating that the model was strong. However, this plot only showed predictions that validated the existing dataset. There was no additional template code to run to produce future number predictions. Thus, this is where our fortunes ended, as unlike with the previous two variations, we were unable to figure out how to add code to produce future predictions. Attempts to borrow and reformat code from the first two variations were not successful. Please refer to Arima_Test_3.ipynb for additional reference.
 
-To conclude, between KNN, SVR, and ARIMA, the KNN model proved to be the most "reliable" but we suspect that it could be overfitting the data. We believe that the ARIMA model should be the most reliable model for this project because the nature of what the model is intended for basically aligns with what our project sought to answer. And we believe that if we were able to figure out how to successfully amend the code in each of the three ARIMA variations we tried, then all three versions could have potentially provided us with very reasonable results and therefore prove to be the most reliable model amongst the three different models.
+![arimatest3](Graphs/arimatest3.png)
+
+To conclude, between KNN, SVR, and ARIMA, the KNN model proved to be the most "reliable" due to its consistently generated high accuracy score but we suspect that it could be overfitting the data. We believe that the ARIMA model *should* be the most reliable model for this project because the nature of what the model is intended for basically aligns with what our project sought to answer. And we believe that if we were able to figure out how to successfully amend the code in each of the three ARIMA variations we tried, then all three versions could have potentially provided us with very reasonable results and therefore prove to be the most reliable model amongst the three different models.
 
 ### Dashboard
 ####
